@@ -31,6 +31,6 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: nagadheeraj/train_image:2 
+        image: nagadheeraj/train_image:tagVersion
         ports:
         - containerPort: 8080
