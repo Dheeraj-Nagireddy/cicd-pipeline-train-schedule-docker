@@ -8,8 +8,8 @@ spec:
     app: train-schedule
   ports:
   - protocol: TCP
-    port: 8080
-    nodePort: 8080
+    port: 9999
+    targetPort: 8080
 
 ---
 
@@ -31,6 +31,6 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: nagadheeraj/train_image:2
+        image: nagadheeraj/train_image:2 
         ports:
         - containerPort: 8080
