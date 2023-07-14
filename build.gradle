@@ -7,7 +7,7 @@ npmVersion = "5.6.0"
 download = true
 }
 //declare a build task
-task build
+task start
 
 //declare a task to create a zip of the app
 task zip(type: Zip) {
@@ -25,8 +25,9 @@ task zip(type: Zip) {
 }
 
 //declare task dependencies
-build.dependsOn zip
-zip.dependsOn npm_build
+start.dependsOn npm_start
+npm_start.dependsOn npmInstall
+npm_start.dependsOn npm_build
 npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
 npm_build.dependsOn npmInstall
